@@ -26,13 +26,20 @@ tar -czf /opt/backups/shop-mobile/uploads/uploads_$(date +%F_%H-%M).tar.gz -C /v
 
 ## Restore
 
-### Restaurar banco
+### Restaurar com script (recomendado)
 ```bash
-mysql -u shopmobile -p shop_mobile < /opt/backups/shop-mobile/db/ARQUIVO.sql
+chmod +x /var/www/shop-mobile/scripts/restore.sh
+/var/www/shop-mobile/scripts/restore.sh \
+  --db /opt/backups/shop-mobile/db/ARQUIVO.sql.gz \
+  --uploads /opt/backups/shop-mobile/uploads/ARQUIVO.tar.gz
 ```
 
-### Restaurar uploads
+### Restaurar manualmente
 ```bash
+# Banco
+mysql -u shopmobile -p shop_mobile < /opt/backups/shop-mobile/db/ARQUIVO.sql
+
+# Uploads
 tar -xzf /opt/backups/shop-mobile/uploads/ARQUIVO.tar.gz -C /var/www/shop-mobile
 sudo chown -R www-data:www-data /var/www/shop-mobile/uploads
 ```
