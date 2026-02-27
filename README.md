@@ -63,6 +63,8 @@ O **Shop Mobile** é uma aplicação web focada em vendas rápidas por catálogo
 
 ## 🚀 Instalação (Local/Servidor)
 
+> Também adotaremos instaladores no padrão **Proxmox community-style** para todos os sistemas (ver `installers/README.md`).
+
 ### 1) Clonar repositório
 
 ```bash
@@ -123,6 +125,7 @@ Antes de publicar em ambiente real:
 - Nginx + PHP-FPM + MySQL
 - Exposição via cloudflared tunnel (sem abrir portas públicas diretas)
 - Backup diário de banco + diretório `uploads/`
+- Instalação padronizada via scripts no estilo community (`installers/`)
 
 ---
 
@@ -144,6 +147,7 @@ Antes de publicar em ambiente real:
 - Token CSRF no admin
 - Pipeline CI/CD
 - Testes automatizados de fluxos críticos
+- Suite de instaladores padrão (`installers/*.sh`) para provisionamento Proxmox
 
 ---
 
