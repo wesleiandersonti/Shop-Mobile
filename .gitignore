@@ -1,0 +1,38 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+debug_*.log
+admin/debug_*.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Runtime uploads/backups (avoid leaking customer media)
+uploads/*
+!uploads/.gitkeep
+
+# SQL dumps / backups
+*.sql
+!database/ecommerce.sql
+!database/sample_data.sql
+*.sql.gz
+*.bak
+
+# PHP / Composer
+vendor/
+composer.lock
+
+# Node (if used in future)
+node_modules/
+
+# Cache/temp
+tmp/
+cache/
+*.tmp
